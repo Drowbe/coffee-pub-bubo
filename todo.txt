@@ -1,0 +1,7 @@
+
+show user image in their messages
+- game.user.avatar
+
+after an answer message is up, hitting return on the keyboard activates send not submit
+
+can we send context about the asker (race, gender, class) to gpt with the question?

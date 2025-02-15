@@ -1,0 +1,12 @@
+{{!-- {{log 'bubo window template' this}} --}}
+<form>
+    <section id="bubo-messages-section">
+        {{#each messages}}
+        {{>message}}
+        {{/each}}
+        <div id="bubo-input-bar">
+            <input type="text" id="query" name="query" placeholder="You ask Bubo">
+            <button type="submit" value="Submit" class="bubo-send-button"><i class="fas fa-circle-up"></i></button>
+        </div>
+    </section>
+</form>

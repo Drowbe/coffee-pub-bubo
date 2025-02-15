@@ -1,0 +1,41 @@
+{{!-- {{log 'bubo message template' this}} --}}
+
+<span style='visibility: hidden'>coffeepub-hide-header</span>
+
+{{#if isSystemMessage}}
+    <div id="" style="{{containerStyle}}" class="cp-chat-card {{themeClass}} {{#if isNew}}bubo-message-new{{/if}}">
+        <div class="bubo-title-bar">
+            <i class="{{senderIconClass}}"></i>
+            <h1 style="">{{sender}}</h1>
+            {{#if showStatusIcon}}
+            <i class="{{statusIconClass}} bubo-status-icon"></i>
+            {{/if}}
+            </h1>
+        </div>
+        {{#if isAnswer}}
+            <div class="cp-chat-card-section">
+                <small>{{asker}} asks:</small>
+                <p>{{question}}</p>
+            </div>
+            <div class="bubo-message-content">
+                {{{content}}}
+            </div>
+            <small>{{answerFinePrint}}</small>
+            {{#if showSendButton}}
+                <div class="cp-chat-card-toolbar">
+                    <button answerindex="{{answerIndex}}"><i class="fas fa-comment-arrow-up-right"></i>Share with party</button>
+                </div>
+            {{/if}}
+        {{else}}
+            <div class="bubo-message-content">
+                {{{content}}}
+            </div>
+        {{/if}}
+    </div>    
+{{else}}
+    <div id="" style="{{containerStyle}}" class="cp-chat-card bubo-user-theme {{#if isNew}}bubo-message-new{{/if}}">
+        <div class="bubo-message-content">
+            <p>{{{content}}}</p>
+        </div>
+    </div>
+{{/if}}

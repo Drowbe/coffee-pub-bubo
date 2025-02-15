@@ -1,0 +1,33 @@
+{
+  "id": "coffee-pub-bubo",
+  "title": "Coffee Pub Bubo",
+  "description": "A FoundryVTT module for managing a coffee pub themed game enhancement",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Drowbe",
+      "url": "https://github.com/Drowbe"
+    }
+  ],
+  "esmodules": [
+    "scripts/coffee-pub-bubo.js"
+  ],
+  "styles": [
+    "styles/coffee-pub-bubo.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "url": "https://github.com/Drowbe/coffee-pub-bubo",
+  "manifest": "https://github.com/Drowbe/coffee-pub-bubo/releases/latest/download/module.json",
+  "download": "https://github.com/Drowbe/coffee-pub-bubo/releases/latest/download/module.zip"
+}

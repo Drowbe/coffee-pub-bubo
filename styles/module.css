@@ -1,0 +1,256 @@
+:root {
+    
+    /* 
+    These are the vars that control the 
+    margines set in CP Blacksmith. 
+    All other CP Modules use them.
+    Right now Bubo is different...
+    I put them here as an FYI.
+    */
+    /* -------------------------- */
+    --intCardMarginTop: 0px;
+    --intCardMarginBottom: 0px;
+    --intCardMarginLeft: 0px;
+    --intCardMarginRight: 0px;
+    /* -------------------------- */
+
+    --container-padding: 12px;
+    --input-bar-height: 48px;
+}
+
+
+div#coffee-pub-bubo {
+    overflow: hidden;
+}
+
+div#coffee-pub-bubo .window-content {
+    padding: 0;
+    overflow: hidden;
+    background: var(--color-border-dark-2);
+
+}
+
+li:has(.bubo-icon) {
+    display: flex !important;
+}
+
+/* .bubo-icon {
+    flex: 1;
+    background-image: url("../assets/bubo-icon-menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+} */
+
+#bubo-messages-section {
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 
+        var(--container-padding)
+        var(--container-padding)
+        calc(var(--input-bar-height) + 2 * var(--container-padding))
+        var(--container-padding);
+    scroll-behavior: auto;
+    scroll-snap-align: end;
+    scroll-padding-bottom: 50px;
+}
+
+.bubo-title-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: -8px -8px 0px -8px;
+    align-items: center;
+    line-height: 1em;
+    background-color: var(--cp-blue-light);
+    padding: 8px;
+}
+
+#bubo-messages-section .cp-chat-card {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+#bubo-messages-section .bubo-message-new {
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+}
+
+.bubo-message-content {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bubo-message-sender {
+    flex: 1 0 0;
+}
+
+.bubo-send-button {
+    flex: 0 1 0;
+    background-color: var(--color-text-light-0);
+    color: rgba(0, 170, 0, 0.8);
+    border: none;
+    padding: 2px;
+    font-size: 28px;
+    position: absolute;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    top: 8px;
+}
+
+/* .bubo-message .bubo-send-button {
+    margin-top: -5px;
+    margin-bottom: -3px;
+} */
+
+.bubo-status-icon {
+    color: rgba(255,255,255,0.5);
+}
+
+#bubo-input-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: var(--color-text-dark-secondary);
+    padding: 0;
+    margin: 0 var(--container-padding);
+    position: absolute;
+    bottom: var(--container-padding);
+    width: calc(100% - 4 * var(--container-padding));
+    border: 1px solid var(--color-border-light-tertiary);
+    border-radius: 24px;
+}
+
+#bubo-input-bar input[type="text"] {
+    flex: 1 0 0;
+    color: white;
+    height: var(--input-bar-height);
+    padding: var(--container-padding);
+    background: none;
+    border: none;
+    border-radius: calc(var(--input-bar-height) / 2.0);
+    font-size: 1em;
+}
+
+.bubo-user-theme {
+    background: var(--color-border-dark-3);
+    color: var(--color-text-light-0);
+    border: none !important;
+    padding: 8px !important;
+}
+
+.bubo-fine-print {
+    margin-top: 8px;
+}
+
+.bubo-question {
+    gap: 0;
+}
+
+.bubo-question small {
+    font-size: 1.0em;
+}
+
+
+/* THEMES */
+
+.cp-chat-card.bubo-red-theme {
+    background: var(--cp-red);
+    color: var(--cp-red-text);
+    border-color: var(--cp-red-light);
+}
+.bubo-red-theme .cp-chat-card-section, .bubo-red-theme .cp-chat-card-bar {
+    background: var(--cp-red-dark);
+}
+.bubo-red-theme button {
+    background: var(--cp-red-light);
+    color: var(--cp-red-text);
+}
+.bubo-red-theme .bubo-title-bar {
+    background: var(--cp-red-light);
+}
+
+.cp-chat-card.bubo-blue-theme {
+    background: var(--cp-blue);
+    color: var(--cp-blue-text);
+    border-color: var(--cp-blue-light);
+}
+.bubo-blue-theme .cp-chat-card-section, .bubo-blue-theme .cp-chat-card-bar {
+    background: var(--cp-blue-dark);
+}
+.bubo-blue-theme button {
+    background: var(--cp-blue-light);
+    color: var(--cp-blue-text);
+}
+.bubo-blue-theme .bubo-title-bar {
+    background: var(--cp-blue-light);
+}
+
+
+/* FONT */
+
+@font-face {
+    font-family: 'cp-bubo';
+    src: url('../font/cp-bubo.eot?95175556');
+    src: url('../font/cp-bubo.eot?95175556#iefix') format('embedded-opentype'),
+         url('../font/cp-bubo.woff2?95175556') format('woff2'),
+         url('../font/cp-bubo.woff?95175556') format('woff'),
+         url('../font/cp-bubo.ttf?95175556') format('truetype'),
+         url('../font/cp-bubo.svg?95175556#cp-bubo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+  /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+  /*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'cp-bubo';
+      src: url('../font/cp-bubo.svg?95175556#cp-bubo') format('svg');
+    }
+  }
+  */
+  [class^="bubo-icon-"]:before, [class*=" bubo-icon-"]:before {
+    font-family: "cp-bubo";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+  
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    /* margin-right: .2em; */
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    /* margin-left: .2em; */
+  
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+  
+  .bubo-icon-tilt:before { content: '\e805'; } /* '' */
+  .bubo-icon-normal:before { content: '\e806'; } /* '' */
+  
